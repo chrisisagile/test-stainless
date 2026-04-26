@@ -38,15 +38,8 @@ export class Applications extends APIResource {
    * ```
    */
   create(params: ApplicationCreateParams, options?: RequestOptions): APIPromise<unknown> {
-    const { 'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID, ...body } = params;
-    return this._client.post('/applications', {
-      body,
-      ...options,
-      headers: buildHeaders([
-        { 'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID },
-        options?.headers,
-      ]),
-    });
+    const { 'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID, ...body } = params
+    return this._client.post('/applications', { body, ...options, headers: buildHeaders([{'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID}, options?.headers]) });
   }
 
   /**
@@ -78,15 +71,8 @@ export class Applications extends APIResource {
    * ```
    */
   update(id: string, params: ApplicationUpdateParams, options?: RequestOptions): APIPromise<unknown> {
-    const { 'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID, ...body } = params;
-    return this._client.patch(path`/applications/${id}`, {
-      body,
-      ...options,
-      headers: buildHeaders([
-        { 'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID },
-        options?.headers,
-      ]),
-    });
+    const { 'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID, ...body } = params
+    return this._client.patch(path`/applications/${id}`, { body, ...options, headers: buildHeaders([{'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID}, options?.headers]) });
   }
 
   /**
@@ -102,23 +88,16 @@ export class Applications extends APIResource {
    * ```
    */
   list(params: ApplicationListParams, options?: RequestOptions): APIPromise<ApplicationListResponse> {
-    const { 'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID, ...query } = params;
-    return this._client.get('/applications', {
-      query,
-      ...options,
-      headers: buildHeaders([
-        { 'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID },
-        options?.headers,
-      ]),
-    });
+    const { 'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID, ...query } = params
+    return this._client.get('/applications', { query, ...options, headers: buildHeaders([{'X-Office-Id': xOfficeID, 'X-Organization-Id': xOrganizationID}, options?.headers]) });
   }
 }
 
-export type ApplicationCreateResponse = unknown;
+export type ApplicationCreateResponse = unknown
 
-export type ApplicationRetrieveResponse = unknown;
+export type ApplicationRetrieveResponse = unknown
 
-export type ApplicationUpdateResponse = unknown;
+export type ApplicationUpdateResponse = unknown
 
 /**
  * Paginated result containing ApplicationHeader records.
@@ -231,6 +210,6 @@ export declare namespace Applications {
     type ApplicationListResponse as ApplicationListResponse,
     type ApplicationCreateParams as ApplicationCreateParams,
     type ApplicationUpdateParams as ApplicationUpdateParams,
-    type ApplicationListParams as ApplicationListParams,
+    type ApplicationListParams as ApplicationListParams
   };
 }
