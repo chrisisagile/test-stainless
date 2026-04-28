@@ -14,7 +14,7 @@ export class Companies extends APIResource {
   }
 }
 
-export type CompanyListResponse = Array<CompanyListResponse.CompanyListResponseItem>
+export type CompanyListResponse = Array<CompanyListResponse.CompanyListResponseItem>;
 
 export namespace CompanyListResponse {
   /**
@@ -28,7 +28,5 @@ export namespace CompanyListResponse {
 }
 
 export declare namespace Companies {
-  export {
-    type CompanyListResponse as CompanyListResponse
-  };
+  export { type CompanyListResponse as CompanyListResponse };
 }
