@@ -1,7 +1,6 @@
 import fs from 'fs';
 import type { ResponseLike } from 'credex-unity/internal/to-file';
 import { toFile } from 'credex-unity/core/uploads';
-import { File } from 'node:buffer';
 
 class MyClass {
   name: string = 'foo';
